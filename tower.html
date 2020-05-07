@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    let roomNumber = prompt('Номер комнаты');
+    roomNumber = +roomNumber;
+    console.log(roomNumber);
+    let floorWidth = 0;
+    let floorCounter = 0;
+    const start= new Date().getTime();
+    while (roomNumber > 0) {
+        floorWidth++;
+        for (let i = 0; i < floorWidth; i++) {
+            floorCounter++;
+            roomNumber = roomNumber - floorWidth;
+            if (roomNumber <= 0) {
+                break;
+            }
+        }
+    }
+    const end = new Date().getTime();
+    console.log('Этаж: ', floorCounter, ' Номер комнаты на этаже: ', roomNumber + floorWidth);
+    console.log(`SecondWay: ${end - start}ms`);
+
+</script>
+</html>
